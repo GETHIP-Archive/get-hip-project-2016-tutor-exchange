@@ -1,5 +1,5 @@
 
-package com.gallup.gethip.resources;
+package com.gallup.te.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

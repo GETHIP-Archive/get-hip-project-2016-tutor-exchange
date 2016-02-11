@@ -1,4 +1,4 @@
-package com.gallup.gethip;
+package com.gallup.te;
 
 import java.sql.SQLException;
 import java.util.HashMap;

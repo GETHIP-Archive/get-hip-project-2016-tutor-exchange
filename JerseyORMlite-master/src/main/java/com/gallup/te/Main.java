@@ -1,7 +1,7 @@
 
-package com.gallup.gethip;
+package com.gallup.te;
 
-import com.gallup.gethip.model.Employee;
+import com.gallup.te.model.User;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
 import com.sun.jersey.api.container.grizzly2.GrizzlyServerFactory;
@@ -18,12 +18,12 @@ import java.sql.SQLException;
 public class Main {
 	
 	private static void createDatabaseConnection(){
-		String databaseUrl = "jdbc:mysql://jgetrost.com:3306/employees";
+		String databaseUrl = "jdbc:mysql://localhost:3306/TutorSystem";
 		ConnectionSource connectionSource;
 		try {
 			connectionSource = new JdbcConnectionSource(databaseUrl);
-			((JdbcConnectionSource)connectionSource).setUsername("zach");
-			((JdbcConnectionSource)connectionSource).setPassword("G3TH!P");
+			((JdbcConnectionSource)connectionSource).setUsername("root");
+			((JdbcConnectionSource)connectionSource).setPassword("testpass");
 			DataSourceManager.setConnectionSource(connectionSource);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -32,7 +32,7 @@ public class Main {
 	
 	private static void buildDaos(){
 		try {
-			DataSourceManager.addDao(Employee.class);
+			DataSourceManager.addDao(User.class);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -57,7 +57,7 @@ public class Main {
     public static final URI BASE_URI = getBaseURI();
     
     protected static HttpServer startServer() throws IOException {
-        ResourceConfig resourceConfig = new PackagesResourceConfig("com.gallup.gethip.resources");
+        ResourceConfig resourceConfig = new PackagesResourceConfig("com.gallup.te.resources");
 
         System.out.println("Starting grizzly2...");
         return GrizzlyServerFactory.createHttpServer(BASE_URI, resourceConfig);
