@@ -11,7 +11,12 @@ Table 1: “Users”
 * gender(VARCHAR(1), NN) (“M” = Male, “F” = Female)
 * role(int(1), NN) (“1” = tutor, “0” = tutee)
 * uName(VARCHAR(45), NN, UQ) User name set at registration, must be unique
-* lName(VARCHAR(45), NN) Password set at registration, must be unique
+* password(VARCHAR(45), NN) Password set at registration, must be unique
+
+
+/api/user?
+
+
 
 Table 2: “Requests”
 
