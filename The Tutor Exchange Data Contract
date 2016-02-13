@@ -14,10 +14,6 @@ Table 1: “Users”
 * password(VARCHAR(45), NN) Password set at registration, must be unique
 
 
-/api/user?
-
-
-
 Table 2: “Requests”
 
  * requestID(int(11), PK, NN, UQ) Auto generated PK into DB if entry does not exist, blank for autogen, Identifies DB entry
@@ -26,6 +22,18 @@ Table 2: “Requests”
  * tutorID(int(11), FK=Users/userID) ID of user that has taken the request, Null if no tutor has taken the request
  * description(VARCHAR(45)) User entered description of the subject
  * schedule(INT(11), NN) Int converted from binary truth table, #see API interaction info for front end JSON#
+
+
+
+	/api/user?param=[Querey Parameter ]
+
+	Query Parameter = userID
+
+	returns full JSON file of the table info
+
+
+
+
 
 
 
