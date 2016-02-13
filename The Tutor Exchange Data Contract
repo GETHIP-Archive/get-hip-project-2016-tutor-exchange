@@ -1,0 +1,36 @@
+The Tutor Exchange | Data Contract and Info Sheet
+GET HIP Spring Project
+[Group Member Names]
+
+Table 1: “Users”
+
+* userID (int(11), PK, NN, UQ) Auto generated PK into DB if entry does not exist, blank for autogen, Identifies DB entry
+* lName (VARCHAR(45), NN) Last name of user
+* name (VARCHAR(45), NN) First name of user
+* gLevel (int(2), NN) (“9” = 9th grade, “10” = 10th grade, “11” = 11th grade, “12” = 12th grade)
+* gender(VARCHAR(1), NN) (“M” = Male, “F” = Female)
+* role(int(1), NN) (“1” = tutor, “0” = tutee)
+* uName(VARCHAR(45), NN, UQ) User name set at registration, must be unique
+* lName(VARCHAR(45), NN) Password set at registration, must be unique
+
+Table 2: “Requests”
+
+ * requestID(int(11), PK, NN, UQ) Auto generated PK into DB if entry does not exist, blank for autogen, Identifies DB entry
+ * subject(VARCHAR(45), NN) Subject name entered by user for request, variable
+ * tuteeID(int(11), NN, FK=Users/userID) ID of user making the request
+ * tutorID(int(11), FK=Users/userID) ID of user that has taken the request, Null if no tutor has taken the request
+ * description(VARCHAR(45)) User entered description of the subject
+ * schedule(INT(11), NN) Int converted from binary truth table, #see API interaction info for front end JSON#
+
+
+
+
+
+
+
+
+
+
+
+
+
