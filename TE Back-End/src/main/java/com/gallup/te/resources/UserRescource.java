@@ -18,7 +18,7 @@ import com.gallup.te.DataSourceManager;
 import com.gallup.te.model.User;
 import com.j256.ormlite.dao.Dao;
 
-@Path("/api/user")
+@Path("/api/userid")
 public class UserRescource {
 
 	@GET
@@ -42,23 +42,19 @@ public class UserRescource {
 	@Consumes("application/json")
 	public String addUser(User u){
 		User tempUser;
-		int preID = u.getUserID
+		int preID = u.getUserID();
 		try {
 			tempUser = getDao().createIfNotExists(u);
 			if (tempUser == null) {
-				// If issue in SQL or JSON
 				return "Problem In Creation";
 			} else {
 				if (tempUser.getUserID() == preID) {
-					// If ID already exists
 					return "Already Esists";
 				} else {
-					// If creating a user with duplicate studentID
-					if (getDao().queryForEq("username", u.getUsername()).size() > 1) {
-						Response.ok(json,MediaType.APPLICATION_JSON);
-						Response.notModified("User already exists);
+					if (getDao().queryForEq("username", u.getUserName()).size() > 1) {
+						//Response.ok(json,MediaType.APPLICATION_JSON);
+						//Response.notModified("User already exists");
 						return "invalid username";
-						// Creating a new user with unique studentID
 					} else {
 						return "created";
 				
