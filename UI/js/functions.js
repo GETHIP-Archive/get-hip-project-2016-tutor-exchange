@@ -1,1 +1,5 @@
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script> 
+$( document ).ready(function() {
+    $.ajax({url: "", success: function(result){
+        $("#div1").html(result);
+    }});
+});
