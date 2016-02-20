@@ -20,8 +20,6 @@ public class Request {
 	private int tuteeID;
 	@DatabaseField(columnName = "description")
 	private String description;
-	@DatabaseField(columnName = "schedule")
-	private int schedule;
 	
 	public Request(){
 		
@@ -63,22 +61,15 @@ public class Request {
 		this.description = description;
 	}
 	
-	public int getSchedule() {
-		return schedule;
-	}
-	
-	
-	
-	public void setSchedule(int schedule) {
-		this.schedule = schedule;
-	}
-	
 	public String getSubject(){
 		return subject;
 	}
 	
-	public void setSubject(String subject){
+	public void setSubject(String subject) {
 		this.subject = subject;
 	}
+
+	
+
 	
 }

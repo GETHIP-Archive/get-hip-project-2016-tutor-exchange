@@ -27,7 +27,8 @@ public class UserRescource {
 			return l;
 		}
 	}
-
+	
+	
 	@GET
 	@Produces("application/json")
 	public List<User> getUser(@QueryParam("param") String param, @QueryParam("type") String type) {
