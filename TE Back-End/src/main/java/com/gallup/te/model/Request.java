@@ -52,14 +52,16 @@ public class Request {
 		this.tuteeID = tuteeID;
 	}
 	
-	public String getDescription() {
+	public String getDescription(){
 		return description;
+		
 	}
 	
-	
-	public void setDescriptiontID(String description) {
+	public void setDescription(String description){
 		this.description = description;
 	}
+	
+	
 	
 	public String getSubject(){
 		return subject;

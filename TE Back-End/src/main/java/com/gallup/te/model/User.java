@@ -25,6 +25,8 @@ public class User {
 	private String username;
 	@DatabaseField(columnName = "password")
 	private String password;
+	@DatabaseField(columnName = "schedule")
+	private String schedule;
 	
 	
 	public User(){
@@ -113,6 +115,15 @@ public class User {
 	public void setPassword(String password){
 		this.password = password;
 	}
+	
+	public String getSchedule(){
+		return schedule;
+	}
+	
+	public void setSchedule(String schedule){
+		this.schedule = schedule;
+	}
+	
 	
 	
 	
