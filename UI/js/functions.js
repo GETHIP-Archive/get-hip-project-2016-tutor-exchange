@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    $.ajax({url: "users.json", success: function(result){
+    $.ajax({url: "https://raw.githubusercontent.com/GETHIP-Classroom/get-hip-project-2016-tutor-exchange/master/UI/users.json", success: function(result){
         console.log(result);
     }});
 });
