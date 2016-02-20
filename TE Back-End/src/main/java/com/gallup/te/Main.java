@@ -1,6 +1,7 @@
 
 package com.gallup.te;
 
+import com.gallup.te.model.Request;
 import com.gallup.te.model.User;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
@@ -18,12 +19,12 @@ import java.sql.SQLException;
 public class Main {
 	
 	private static void createDatabaseConnection(){
-		String databaseUrl = "jdbc:mysql://localhost:3306/TheTutorExchange";
+		String databaseUrl = "jdbc:mysql://jgetrost.com:3306/tutor";
 		ConnectionSource connectionSource;
 		try {
 			connectionSource = new JdbcConnectionSource(databaseUrl);
-			((JdbcConnectionSource)connectionSource).setUsername("root");
-			((JdbcConnectionSource)connectionSource).setPassword("testpass");
+			((JdbcConnectionSource)connectionSource).setUsername("tutor");
+			((JdbcConnectionSource)connectionSource).setPassword("gethip");
 			DataSourceManager.setConnectionSource(connectionSource);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -33,6 +34,7 @@ public class Main {
 	private static void buildDaos(){
 		try {
 			DataSourceManager.addDao(User.class);
+			DataSourceManager.addDao(Request.class);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

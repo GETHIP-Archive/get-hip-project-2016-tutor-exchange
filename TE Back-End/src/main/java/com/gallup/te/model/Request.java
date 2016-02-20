@@ -8,7 +8,7 @@ import com.j256.ormlite.table.DatabaseTable;
 @XmlRootElement
 @DatabaseTable(tableName="Requests")
 
-public class Requests {
+public class Request {
 
 	@DatabaseField(generatedId = true, columnName = "requestID")
 	private int requestID;
@@ -23,11 +23,11 @@ public class Requests {
 	@DatabaseField(columnName = "schedule")
 	private int schedule;
 	
-	public Requests(){
+	public Request(){
 		
 	}
 	
-	public int RequestID() {
+	public int getRequestID() {
 		return requestID;
 	}
 	
@@ -36,7 +36,7 @@ public class Requests {
 		this.requestID = requestID;
 	}
 	
-	public int TutorID() {
+	public int getTutorID() {
 		return tutorID;
 	}
 	
@@ -45,7 +45,7 @@ public class Requests {
 		this.tutorID = tutorID;
 	}
 	
-	public int TuteeID() {
+	public int getTuteeID() {
 		return tuteeID;
 	}
 	
@@ -54,7 +54,7 @@ public class Requests {
 		this.tuteeID = tuteeID;
 	}
 	
-	public String Description() {
+	public String getDescription() {
 		return description;
 	}
 	
@@ -63,7 +63,7 @@ public class Requests {
 		this.description = description;
 	}
 	
-	public int Schedule() {
+	public int getSchedule() {
 		return schedule;
 	}
 	
@@ -71,6 +71,14 @@ public class Requests {
 	
 	public void setSchedule(int schedule) {
 		this.schedule = schedule;
+	}
+	
+	public String getSubject(){
+		return subject;
+	}
+	
+	public void setSubject(String subject){
+		this.subject = subject;
 	}
 	
 }

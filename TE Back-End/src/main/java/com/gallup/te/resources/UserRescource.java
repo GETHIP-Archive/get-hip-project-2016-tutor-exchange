@@ -17,7 +17,7 @@ import com.gallup.te.DataSourceManager;
 import com.gallup.te.model.User;
 import com.j256.ormlite.dao.Dao;
 
-@Path("/api/userid")
+@Path("/api/user")
 public class UserRescource {
 
 	List<User> getSend(List<User> l) {
@@ -36,8 +36,8 @@ public class UserRescource {
 				return getSend(getDao().queryForEq("lName", param));
 			} else if (type.equals("username")) {
 				return getSend(getDao().queryForEq("username", param));
-			} else if (type.equals("uId")) {
-				return getSend(getDao().queryForEq("uId", param));
+			} else if (type.equals("userID")) {
+				return getSend(getDao().queryForEq("userID", param));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
