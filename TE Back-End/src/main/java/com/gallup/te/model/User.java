@@ -13,17 +13,17 @@ public class User {
 	private int userID;
 	@DatabaseField(columnName = "lName")
 	private String lName;
-	@DatabaseField(columnName = "name")
-	private String name;
+	@DatabaseField(columnName = "fName")
+	private String fName;
 	@DatabaseField(columnName = "gLevel")
 	private int gLevel;
 	@DatabaseField(columnName = "gender")
 	private String gender;
 	@DatabaseField(columnName = "role")
 	private int role;
-	@DatabaseField(unique = true, columnName = "uName")
-	private String uName;
-	@DatabaseField(unique = true, columnName = "password")
+	@DatabaseField(columnName = "username")
+	private String username;
+	@DatabaseField(columnName = "password")
 	private String password;
 	
 	
@@ -31,15 +31,15 @@ public class User {
 		
 	}
 	
-	public User(int userID, String lName, String name, int gLevel, String gender, int role, String uName, String password){
+	public User(int userID, String lName, String username, String fName, int gLevel, String gender, int role, String password){
 		this.userID = userID;
 		this.lName = lName;
-		this.name = name;
+		this.fName = fName;
 		this.gLevel = gLevel;
 		this.gender = gender;
 		this.role = role;
-		this.uName = uName;
 		this.password = password;
+		this.username = username;
 	}
 	
 	public int getUserID() {
@@ -60,11 +60,11 @@ public class User {
 	}
 
 	public String getFirstName() {
-		return name;
+		return fName;
 	}
 
-	public void setFirstName(String name) {
-		this.name = name;
+	public void setFirstName(String fName) {
+		this.fName = fName;
 	}
 	
 	public int getGradeLevel() {
@@ -75,6 +75,16 @@ public class User {
 
 	public void setGradeLevel(int gLevel) {
 		this.gLevel = gLevel;
+	}
+	
+	public String getUsername() {
+
+		return username;
+
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	
@@ -94,14 +104,6 @@ public class User {
 
 	public void setRole(int role) {
 		this.role = role;
-	}
-
-	public String getUserName(){
-		return uName;
-	}
-	
-	public void setUsername(String uName){
-		this.uName = uName;
 	}
 	
 	public String getPassword(){

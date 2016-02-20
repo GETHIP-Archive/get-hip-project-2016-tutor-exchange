@@ -10,7 +10,7 @@ Table 1: “Users”
 * gLevel (int(2), NN) (“9” = 9th grade, “10” = 10th grade, “11” = 11th grade, “12” = 12th grade)
 * gender(VARCHAR(1), NN) (“M” = Male, “F” = Female)
 * role(int(1), NN) (“1” = tutor, “0” = tutee)
-* uName(VARCHAR(45), NN, UQ) User name set at registration, must be unique
+* username(VARCHAR(45), NN) User name set at registration
 * password(VARCHAR(45), NN) Password set at registration, must be unique
 
 

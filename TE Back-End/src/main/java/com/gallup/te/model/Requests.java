@@ -23,7 +23,7 @@ public class Requests {
 	@DatabaseField(columnName = "schedule")
 	private int schedule;
 	
-	public Request(){
+	public Requests(){
 		
 	}
 	

@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class Main {
 	
 	private static void createDatabaseConnection(){
-		String databaseUrl = "jdbc:mysql://localhost:3306/TutorSystem";
+		String databaseUrl = "jdbc:mysql://localhost:3306/TheTutorExchange";
 		ConnectionSource connectionSource;
 		try {
 			connectionSource = new JdbcConnectionSource(databaseUrl);
