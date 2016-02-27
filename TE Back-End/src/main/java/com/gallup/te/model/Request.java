@@ -14,10 +14,10 @@ public class Request {
 	private int requestID;
 	@DatabaseField(columnName = "subject")
 	private String subject;
-	@DatabaseField(columnName = "tutorID")
-	private int tutorID;
-	@DatabaseField(columnName = "tuteeID")
-	private int tuteeID;
+	@DatabaseField(columnName = "tutorID", foreign = true, foreignAutoRefresh=true)
+	private User tutorID;
+	@DatabaseField(columnName = "tuteeID", foreign = true, foreignAutoRefresh=true)
+	private User tuteeID;
 	@DatabaseField(columnName = "description")
 	private String description;
 	
@@ -34,21 +34,21 @@ public class Request {
 		this.requestID = requestID;
 	}
 	
-	public int getTutorID() {
+	public User getTutorID() {
 		return tutorID;
 	}
 	
 	
-	public void setTutorID(int tutorID) {
+	public void setTutorID(User tutorID) {
 		this.tutorID = tutorID;
 	}
 	
-	public int getTuteeID() {
+	public User getTuteeID() {
 		return tuteeID;
 	}
 	
 	
-	public void setTuteeID(int tuteeID) {
+	public void setTuteeID(User tuteeID) {
 		this.tuteeID = tuteeID;
 	}
 	
