@@ -13,5 +13,8 @@ $( document ).ready(function() {
         });
         result.user.schedule = boolean;
         console.log(result.user.schedule);
+        $.each(boolean, function(index, value){
+            $('#cb'+ index).prop('checked', value);
+        });
     }});
 });
