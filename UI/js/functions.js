@@ -1,7 +1,12 @@
+var user;
 $( document ).ready(function() {
-    $.ajax({url: "https://raw.githubusercontent.com/GETHIP-Classroom/get-hip-project-2016-tutor-exchange/master/UI/users.json", success: function(result){
+    $.ajax({
+        url: "http://localhost:9998/api/user?param=3061&type=uID", 
+        method: 'GET',
+        success: function(result){
         result = JSON.parse(result);
-        var binary_array = (""+result.user.schedule).split("")
+        user = result;
+        var binary_array = (""+result.user.schedule).split("");
         var boolean = [];
         $.each(binary_array, function(index,value){
         if(value == "0"){
@@ -17,4 +22,28 @@ $( document ).ready(function() {
             $('#cb'+ index).prop('checked', value);
         });
     }});
+});
+
+$('btnsub').click(function(){
+        var booleanarray = [];
+        var binaryString;
+    for(var i = 0; i < 10; i++){
+        boolean.push($('#cb'+ index).is(':checked'));
+    }
+    $.each(booleanarray, function(index,value){
+        if(value){
+             binaryString = binaryString + 1;
+        }else{
+            binaryString = binaryString + 0;
+        }
+    });
+    user.user.schedule = binaryString;
+    $.ajax({
+        url: "http://localhost:9998/api/user", 
+        method: 'POST',
+        data: user,
+        success: function(result){
+            console.log('success');
+        }
+    });
 });
