@@ -1,7 +1,7 @@
 var user;
 $( document ).ready(function() {
     $.ajax({
-        url: "http://localhost:9998/api/user?param=3061&type=uID", 
+        url: "http://localhost:9998/api/user?param=3061&type=userID", 
         method: 'GET',
         success: function(result){
         result = JSON.parse(result);

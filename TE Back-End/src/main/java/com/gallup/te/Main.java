@@ -8,6 +8,8 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.sun.jersey.api.container.grizzly2.GrizzlyServerFactory;
 import com.sun.jersey.api.core.PackagesResourceConfig;
 import com.sun.jersey.api.core.ResourceConfig;
+import com.sun.jersey.server.impl.container.grizzly2.GrizzlyContainerProvider;
+
 import org.glassfish.grizzly.http.server.HttpServer;
 
 import javax.ws.rs.core.UriBuilder;
@@ -60,9 +62,12 @@ public class Main {
     
     protected static HttpServer startServer() throws IOException {
         ResourceConfig resourceConfig = new PackagesResourceConfig("com.gallup.te.resources");
-
+        resourceConfig.getContainerResponseFilters().add("CORSResponseFilter");
+        
         System.out.println("Starting grizzly2...");
-        return GrizzlyServerFactory.createHttpServer(BASE_URI, resourceConfig);
+        HttpServer server = GrizzlyServerFactory.createHttpServer(BASE_URI, resourceConfig);
+       
+        return server;
     }
     
     public static void main(String[] args) throws IOException {
