@@ -41,11 +41,15 @@ $('#btnsub').click(function(){
     console.log(binaryString);
     $.ajax({
         url: "http://localhost:9998/api/user", 
-        method: 'POST',
+        method: 'PUT',
          contentType: 'application/json',
-        data: user.user,
+        data: JSON.stringify(user.user),
         success: function(result){
             console.log('success');
         }
     });
 });
+
+
+
+
