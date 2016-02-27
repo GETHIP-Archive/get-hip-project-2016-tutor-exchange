@@ -1,5 +1,5 @@
 $('#rbtn').click(function(){
-    var obj = {subject: $('#rform1').val, description: $('#rform2').val, tuteeID: '1967'};
+    var obj = {subject: $('#rform1').val(), description: $('#rform2').val(), tuteeID: "1967"};
     console.log(obj);
 
         $.ajax({
