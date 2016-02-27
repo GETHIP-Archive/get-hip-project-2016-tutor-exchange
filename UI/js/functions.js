@@ -1,10 +1,10 @@
 var user;
 $( document ).ready(function() {
     $.ajax({
-        url: "http://localhost:9998/api/user?param=3061&type=userID", 
+        url: "http://localhost:9998/api/user?param=1967&type=userID", 
         method: 'GET',
         success: function(result){
-        result = JSON.parse(result);
+       
         user = result;
         var binary_array = (""+result.user.schedule).split("");
         var boolean = [];
@@ -24,11 +24,11 @@ $( document ).ready(function() {
     }});
 });
 
-$('btnsub').click(function(){
+$('#btnsub').click(function(){
         var booleanarray = [];
-        var binaryString;
+        var binaryString = '';
     for(var i = 0; i < 10; i++){
-        boolean.push($('#cb'+ index).is(':checked'));
+        booleanarray.push($('#cb'+ i).is(':checked'));
     }
     $.each(booleanarray, function(index,value){
         if(value){
@@ -38,10 +38,12 @@ $('btnsub').click(function(){
         }
     });
     user.user.schedule = binaryString;
+    console.log(binaryString);
     $.ajax({
         url: "http://localhost:9998/api/user", 
         method: 'POST',
-        data: user,
+         contentType: 'application/json',
+        data: user.user,
         success: function(result){
             console.log('success');
         }

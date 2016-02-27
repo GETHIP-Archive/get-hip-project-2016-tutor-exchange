@@ -11,6 +11,7 @@ import com.sun.jersey.api.core.ResourceConfig;
 import com.sun.jersey.server.impl.container.grizzly2.GrizzlyContainerProvider;
 
 import org.glassfish.grizzly.http.server.HttpServer;
+import org.glassfish.grizzly.http.server.StaticHttpHandler;
 
 import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
@@ -62,11 +63,11 @@ public class Main {
     
     protected static HttpServer startServer() throws IOException {
         ResourceConfig resourceConfig = new PackagesResourceConfig("com.gallup.te.resources");
-        resourceConfig.getContainerResponseFilters().add("CORSResponseFilter");
-        
+        resourceConfig.getContainerResponseFilters().add("com.gallup.te.CORSResponseFilter");
+        System.err.println("Adding cors filter");
         System.out.println("Starting grizzly2...");
         HttpServer server = GrizzlyServerFactory.createHttpServer(BASE_URI, resourceConfig);
-       
+        server.getServerConfiguration().addHttpHandler(new StaticHttpHandler("/Users/Jacob/Documents/GitHub/get-hip-project-2016-tutor-exchange/UI"), "/home");
         return server;
     }
     
