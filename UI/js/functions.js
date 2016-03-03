@@ -46,6 +46,7 @@ $('#btnsub').click(function(){
         data: JSON.stringify(user.user),
         success: function(result){
             console.log('success');
+             window.location.reload();
         }
     });
 });

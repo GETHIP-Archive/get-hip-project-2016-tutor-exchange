@@ -15,6 +15,9 @@ $('#rbtn').click(function(){
                 contentType: 'application/json',
                 data: JSON.stringify(obj),
                 success: function(result){
+                  $('#rform2').val("")
+                  $('#rform1').val("")
+                    window.location.reload();
                 }
             });
         }
