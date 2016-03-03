@@ -38,6 +38,9 @@ public class RequestRescource {
 				return getSend(getDao().queryForEq("tutorID", param));
 			} else if (type.equals("tuteeID")) {
 				return getSend(getDao().queryForEq("tuteeID", param));
+			}else if(type.equals("status")){
+				return getSend(getDao().queryForEq("status", param));
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

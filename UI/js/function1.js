@@ -7,7 +7,7 @@ $('#rbtn').click(function(){
         success: function(result){
             requester = result.user;
             console.log(result);
-            var obj = {subject: $('#rform1').val(), description: $('#rform2').val(), tuteeID: requester};
+            var obj = {subject: $('#rform1').val(), description: $('#rform2').val(), tuteeID: requester, status: '1'};
             console.log(obj);
             $.ajax({
                 url: "http://localhost:9998/api/request", 

@@ -20,6 +20,9 @@ public class Request {
 	private User tuteeID;
 	@DatabaseField(columnName = "description")
 	private String description;
+	@DatabaseField(columnName = "status")
+	private int status;
+	
 	
 	public Request(){
 		
@@ -69,6 +72,14 @@ public class Request {
 	
 	public void setSubject(String subject) {
 		this.subject = subject;
+	}
+
+	public int getStatus(){
+		return status;
+	}
+	
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 	
