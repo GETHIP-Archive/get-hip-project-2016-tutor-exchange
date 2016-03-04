@@ -6,13 +6,12 @@ $('#btnsub').click(function(){
         method: 'GET',
         success: function(result){
             return = result.request;
-        
-
+            return.tutorID = 8422;
     $.ajax({
-        url: "http://localhost:9998/api/user", 
+        url: "http://localhost:9998/api/request", 
         method: 'PUT',
          contentType: 'application/json',
-        data: JSON.stringify(user.user),
+        data: JSON.stringify(request),
         success: function(result){
             console.log('success');
              window.location.reload();
