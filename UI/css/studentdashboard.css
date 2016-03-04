@@ -103,5 +103,5 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
-tr:nth-child(even){backround-color: blue}
-tr:nth-child(odd){backround-color:white}
+tr:nth-child(even){backround-color: blue;
+tr:nth-child(odd){backround-color:white;
