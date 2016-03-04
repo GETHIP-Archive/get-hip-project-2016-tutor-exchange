@@ -14,7 +14,7 @@ $( document ).ready(function() {
         var rows = [];
         console.log(rows);
         $.each(pending, function(){
-        rows += "<tr><td>" + this.subject + "</td><td>" + this.tuteeID.firstName + " " + this.tuteeID.lastName + "</td><td>" + this.description  +  "</td></tr>";
+                rows += "<tr><td>" + this.subject + "</td><td>" + this.tuteeID.firstName + " " + this.tuteeID.lastName + "</td><td>" + this.description  +  "</td></tr>";
                 });
 
         $( rows ).appendTo( "#tutorDB" );
