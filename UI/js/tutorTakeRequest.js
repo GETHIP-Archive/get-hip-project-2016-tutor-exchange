@@ -1,13 +1,15 @@
 $( document ).ready(function() {
     var pending = [];
+    var rresult = [];
 
  $.ajax({
         url: "http://localhost:9998/api/request?param=1&type=status", 
         method: 'GET',
         success: function(result){
+            rresult = result;
             console.log(result);
           var pending = [];
-       $.each(result.request, function(){
+       $.each(rresult.request, function(){
         if(this.tutorID == null){
             pending.push(this)
         }
@@ -24,10 +26,5 @@ $( document ).ready(function() {
             console.log(rows);
         }
     });
-
-
-
-
-
-
 });
+
