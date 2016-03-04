@@ -1,26 +1,33 @@
-$('#btnsub').click(function(){
-        var booleanarray = [];
-        var binaryString = '';
-    for(var i = 0; i < 10; i++){
-        booleanarray.push($('#cb'+ i).is(':checked'));
-    }
-    $.each(booleanarray, function(index,value){
-        if(value){
-             binaryString = binaryString + 1;
-        }else{
-            binaryString = binaryString + 0;
-        }
-    });
-    user.user.schedule = binaryString;
-    console.log(binaryString);
-    $.ajax({
-        url: "http://localhost:9998/api/user", 
-        method: 'PUT',
-         contentType: 'application/json',
-        data: JSON.stringify(user.user),
+$( document ).ready(function() {
+    var pending = [];
+
+ $.ajax({
+        url: "http://localhost:9998/api/request?param=1967&type=tuteeID", 
+        method: 'GET',
         success: function(result){
-            console.log('success');
-             window.location.reload();
+            console.log(result);
+          var pending = [];
+       $.each(result.request, function(){
+        if(this.tutorID == null){
+            pending.push(this)
         }
     });
+       console.log(pending);
+        var rows = [];
+        console.log(rows);
+        $.each(pending, function(){
+        rows += "<tr><td>" + this.subject + "</td><td>" + this.description + "</td></tr>";
+                });
+
+        $( rows ).appendTo( "#pendtable" );
+
+            console.log(rows);
+        }
+    });
+
+
+
+
+
+
 });
