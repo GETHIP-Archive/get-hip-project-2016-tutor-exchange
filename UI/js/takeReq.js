@@ -25,7 +25,9 @@ $('#takebtn').click(function(){
                         data: JSON.stringify(response),
                         success: function(result){
                             console.log(JSON.stringify(response));
+                               $('#enterrequestid').val("")
                             window.location.reload();
+
 
                         }
 
